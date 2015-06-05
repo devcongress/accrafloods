@@ -1,3 +1,9 @@
-- @people.each do |person|
-    = link_to (image_tag person.image.url(:medium)), person
-    %h2= link_to person.title, person
+#people.transitions-enabled
+    - @people.each do |person|
+        .box.panel.panel-default
+            = link_to (image_tag person.image.url(:medium)), person
+            .panel-body
+                %h2= link_to person.title, person
+                %p.user
+                Submitted by
+                = person.user.email

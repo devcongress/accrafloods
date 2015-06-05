@@ -1,10 +1,21 @@
-= image_tag @person.image.url(:medium)
-%h1= @person.title
-%p= @person.description
-%p
-Submitted by
-= @person.user.email
-
-= link_to "Back", root_path
-= link_to "Edit", edit_person_path
-= link_to "Delete", person_path, method: :delete, data: { confirm: "Are you sure you want to delete this information?"}, class: "btn btn-danger"
+#pin_show.row
+    .col-md-8.col-md-offset-2
+        .panel.panel-default
+            .panel-heading.pin_image
+                = image_tag @person.image.url
+            .panel-body
+                %h1= @person.title
+                %p.description= @person.description
+                %p
+                Submitted by
+                = @person.user.email
+            .panel-footer
+                .row
+                    .col-md-6
+                        %p.user
+                        Submitted by
+                        = @person.user.email
+                    .col-md-6
+                        .btn-group.pull-right
+                            = link_to "Edit", edit_person_path, class: "btn btn-default"
+                            = link_to "Delete", person_path, method: :delete, data: { confirm: "Are you sure you want to delete this information?"}, class: "btn btn-danger"
