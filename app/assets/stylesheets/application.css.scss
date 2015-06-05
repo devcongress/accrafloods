@@ -17,13 +17,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+html{
+    min-height: 100%;
+}
 
 body {
     background: #E9E9E9;
+    font-family: "Lato", sans-serif;
+    background: url(https://dl.dropboxusercontent.com/u/64058349/accrafloods-bg.jpg);
+    background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 100;
+    // font-weight: 100;
 }
 
 nav {
@@ -39,7 +47,7 @@ nav {
     }
 }
 
-#pins {
+#people {
   margin: 0 auto;
   width: 100%;
   .box {
@@ -78,7 +86,7 @@ nav {
     }
 }
 
-#pin_show {
+#person_show {
     .panel-heading {
         padding: 0;
     }
@@ -114,4 +122,16 @@ nav {
 
 textarea {
     min-height: 250px;
+}
+
+.numbers-to-call {
+    margin-bottom: 30px;
+}
+
+.numbers-to-call span{
+    font-size: 32px;
+}
+
+.numbers-to-call span:not(:last-child):after{
+    content: ' | ';
 }

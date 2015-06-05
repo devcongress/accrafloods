@@ -1,0 +1,28 @@
+%h3.home-page--intro.text-center= "This website was created to crowdsource information on the floods in Accra during June 2015."
+
+%section.numbers-to-call.text-center
+    %h3= "Call these numbers in any emergency."
+    %span= link_to "0302780221", "tel:+233302780221"
+    %span= link_to "0302772926", "tel:+233302772926"
+    %span= link_to "0302780541", "tel:+233302780541"
+    %span= link_to "0299005011", "tel:+233299005011"
+    %span= link_to "0299005084", "tel:+233299005084"
+    %span= link_to "0299005086", "tel:+233299005086"
+    %span= link_to "0299005099", "tel:+233299005099"
+</div>
+
+%div.home-links.text-center
+    %a= link_to "Missing Persons", people_path, class: "btn btn-lg btn-danger"
+    %a= link_to "Report Missing Persons", new_person_path, class: "btn btn-lg btn-default"
+    %a= link_to "Social Media Stream", social_path, class: "btn btn-lg btn-primary"
+
+%h2.text-center= "Reported Missing"
+#people.transitions-enabled
+    - @people.each do |person|
+        .box.panel.panel-default
+            = link_to (image_tag person.image.url(:medium)), person
+            .panel-body
+                %h2= link_to person.title, person
+                %p.user
+                Submitted by
+                = person.user.email
