@@ -18,6 +18,7 @@
                     %li= link_to "Sign Out", destroy_user_session_path, method: :delete
             - else
                 %ul.nav.navbar-nav.navbar-right
+                    %li= link_to "Report Missing Person", new_person_path
                     %li= link_to "Sign Up", new_user_registration_path
                     %li= link_to "Sign In", new_user_session_path
     .container
