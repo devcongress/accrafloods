@@ -44,7 +44,7 @@ class PeopleController < ApplicationController
     private
 
     def person_params
-        params.require(:person).permit(:title, :description)
+        params.require(:person).permit(:title, :description, :image)
     end
 
     def find_person

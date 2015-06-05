@@ -1,5 +1,5 @@
-%h1 Edit Person's Details
-
-= render 'form'
-
-= link_to "Cancel", person_path
+.col-md-6.col-md-offset-3
+    %h1 Edit Person's Details
+    = image_tag @person.image.url(:medium)
+    = render 'form'
+    = link_to "Cancel", person_path
