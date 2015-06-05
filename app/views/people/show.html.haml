@@ -1,5 +1,8 @@
 %h1= @person.title
 %p= @person.description
+%p
+Submitted by
+= @person.user.email
 
 = link_to "Back", root_path
 = link_to "Edit", edit_person_path
