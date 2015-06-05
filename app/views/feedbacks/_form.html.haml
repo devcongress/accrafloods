@@ -1,0 +1,17 @@
+= simple_form_for @feedback, html: { multipart: true } do |f|
+    - if @feedback.errors.any?
+        #errors
+            %h2
+                = pluralize(@feedback.errors.count, "error")
+                prevented this feedback from being sent
+            %ul
+                - @feedback.errors.full_messages.each do |msg|
+                    %li= msg
+
+    .form-group
+        = f.input :title, input_html: { class: 'form-control', :required => true }
+
+    .form-group
+        = f.input :description, input_html: { class: 'form-control', :required => true }
+
+    = f.button :submit,  "Send Feedback", class: "btn btn-primary"
