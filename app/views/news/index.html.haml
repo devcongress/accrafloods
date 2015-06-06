@@ -1,0 +1,9 @@
+%h2.text-center= "Related News"
+%div.text-center
+    %a= link_to "Want to add a link?", new_news_path, class: "btn btn-lg btn-primary"
+
+#news
+    .col-md-8.col-md-offset-2
+        - @news.each do |news|
+            .well.news-center
+                %a= link_to news.title, news.link

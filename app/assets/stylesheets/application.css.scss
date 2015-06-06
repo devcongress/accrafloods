@@ -135,3 +135,17 @@ textarea {
 .numbers-to-call span:not(:last-child):after{
     content: ' | ';
 }
+
+.form-helper {
+    margin-top: -12px;
+}
+
+.news-center {
+    margin-top: 10px;
+    padding: 10px;
+
+    a {
+        font-size: 125%;
+        padding: 5px auto;
+    }
+}

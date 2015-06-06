@@ -1,0 +1,20 @@
+= simple_form_for @news, html: { multipart: true } do |f|
+    - if @news.errors.any?
+        #errors
+            %h2
+                = pluralize(@news.errors.count, "error")
+                prevented this news link from being added
+            %ul
+                - @news.errors.full_messages.each do |msg|
+                    %li= msg
+
+    .form-group
+        = f.input :title, input_html: { class: 'form-control' }, :required => true
+        %p.small.form-helper= "eg. Accra floods: Relative painfully search for dead, injured"
+
+    .form-group
+        = f.input :link, input_html: { class: 'form-control' }, :required => true
+        %p.small.form-helper= "eg. http://ghanaweb.com/GhanaHomePage/NewsArchive/artikel.php?ID=361165"
+
+
+    = f.button :submit, "Add News Item", class: "btn btn-primary"
